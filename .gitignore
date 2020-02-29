@@ -1,6 +1,7 @@
 node_modules
 /dist
-
+/build/cache
+/build/static
 # local env files
 .env.local
 .env.*.local
