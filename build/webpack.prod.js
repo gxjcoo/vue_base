@@ -5,6 +5,7 @@
 打包前清空dist文件夹
 *******************************************************/
 const path = require('path')
+const Webpack = require('webpack')
 const webpackConfig = require('./webpack.config.js')
 const WebpackMerge = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -30,7 +31,12 @@ module.exports = WebpackMerge(webpackConfig,{
         sourceMap:true
    }),
     //压缩css
-    new OptimizeCssAssetsPlugin({})
+    new OptimizeCssAssetsPlugin({}),
+    new Webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    })
     ],
     splitChunks:{
       chunks:'all',

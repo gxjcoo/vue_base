@@ -14,7 +14,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 //解析.vue文件
 const vueLoaderPlugin = require('vue-loader/lib/plugin')
-//将css文件从html中剥离出来，独立的生成文件（报错 待解决）
+//将css文件从html中剥离出来，独立的生成文件
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //多进程loader处理
 const HappyPack = require('happypack')
@@ -73,7 +73,6 @@ module.exports = {
             plugins:[autoprefixer]
           }
         }],
-        exclude:/node_modules/
       },
       {
         test:/\.less$/,
@@ -124,7 +123,7 @@ module.exports = {
         exclude:/node_modules/
       },
       {
-        test:/\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
+        test: /\.(woff2?|svg|eot|ttf|otf)\??.*$/,
         use:{
           loader:'url-loader',
           options:{
@@ -137,7 +136,6 @@ module.exports = {
             }
           }
         },
-        exclude:/node_modules/
       }
     ]
   },
@@ -163,7 +161,7 @@ module.exports = {
         {
           loader:'babel-loader',
           options:{
-            presets:['@babel/preset-env',{modules:false}]
+            presets:['@babel/preset-env']
           },
           cacheDirectory:true
         }
@@ -173,17 +171,17 @@ module.exports = {
 //将dll打包后的文件集合到dist目录下
     new Webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require('./vendor-manifest.json')
+      manifest: require('./static/vendor-manifest.json')
     }),
     new CopyWebpackPlugin([ // 拷贝生成的文件到dist目录 这样每次不必手动去cv
       {from: path.resolve(__dirname,'static/js/vendor.dll.js')  ,
        to:path.resolve(__dirname,'../dist/js')}
     ]),
-    new webpackBundleAnalyzerPlubin({
-      analyzerHost:'127.0.0.1',
-      analyzerPort:8090
-    })
   ],
+  // new webpackBundleAnalyzerPlubin({
+  //   analyzerHost:'127.0.0.1',
+  //   analyzerPort:8090
+  // })
   optimization:{
     minimizer:[
       new ParalleUglifyPlugin({
