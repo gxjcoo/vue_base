@@ -1,5 +1,4 @@
 "use strict";
-import Vue from 'vue';
 import axios from "axios";
 import { Message,Loading } from 'element-ui';
 import _ from 'lodash';

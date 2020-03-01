@@ -28,7 +28,6 @@ export default {
     }
   },
   mounted(){
-    console.log("%c "+this.$axios,'color:blue')
     this.load()
   },
   methods: {
@@ -36,7 +35,7 @@ export default {
   this.$store.commit('test/add')
     },
     load(){
-      this.$axios.get('/').then(res=>{console.log(res)})
+      this.$axios.get('/aa').then(res=>{console.log(res)})
     }
   }
 };
