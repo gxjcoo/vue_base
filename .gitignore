@@ -2,6 +2,7 @@ node_modules
 /dist
 /build/cache
 /build/static
+/build/*.json
 # local env files
 .env.local
 .env.*.local

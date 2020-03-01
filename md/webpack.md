@@ -1,4 +1,6 @@
-(指导教程)[https://juejin.im/post/5de87444518825124c50cd36#heading-27]
+(指导教程)["https://juejin.im/post/5de87444518825124c50cd36#heading-27"]
+(指导教程)["https://juejin.im/post/5cc55c336fb9a032086dd701"]
+
 # 基础
 webpack : 打包生成dist/bundle[hash].js文件
 html-webpack-plugin : 将生成的js文件自动引入到index.html文件中
@@ -6,7 +8,7 @@ clean-webpack-plugin:打包前清空dist文件夹
 style-loader css-loader less less-loader : 解析css文件
 postcss-loader autoprefixer :为css添加浏览器前缀,提高兼容性
 mini-css-extract-plugin : 将css文件从html中剥离出来，独立的生成文件
-
+file-loader url-loader  如果文件小于限制的大小。则会返回 base64 编码，否则使用 file-loader 将文件复制到输出的目录中
 babel-loader @babel/preset-env @babel/core :将将 ES6/7/8语法转换为ES5语法
 
 babel-polyfill:将新api进行转换 例如(promise、Generator、Set、Maps、Proxy等)
@@ -36,3 +38,5 @@ uglifyjs-webpack-plugin 压缩js(有bug注释掉了,有替代品可用 自行百
 
 * webpack.dll.config: 将不常更新的包 打包为静态文件。防止每次重复打包
 * cache-loader :再次构建会先比较一下，如果文件较之前的没有发生变化则会直接使用缓存。
+
+* webpack-bundle-analyzer将打包后的内容束展示为方便交互的直观树状图，让我们知道我们所构建包中真正引入的内容

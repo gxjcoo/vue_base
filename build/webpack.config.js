@@ -25,8 +25,7 @@ const happyThreadPool = HappyPack.ThreadPool({size:os.cpus().length})
 const ParalleUglifyPlugin = require('webpack-parallel-uglify-plugin')
 //拷贝功能
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-//直观树状图
-const webpackBundleAnalyzerPlubin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
 const devMode = process.argv.indexOf('--mode=production') === -1;
 module.exports = {
   entry:{
@@ -179,10 +178,6 @@ module.exports = {
       {from: path.resolve(__dirname,'static/js/vendor.dll.js')  ,
        to:path.resolve(__dirname,'../dist/js')}
     ]),
-    new webpackBundleAnalyzerPlubin({
-      analyzerHost:'127.0.0.1',
-      analyzerPort:8090
-    })
   ],
   optimization:{
     minimizer:[

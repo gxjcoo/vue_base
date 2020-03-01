@@ -10,6 +10,8 @@ const WebpackMerge = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+//直观树状图
+const webpackBundleAnalyzerPlubin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 module.exports = WebpackMerge(webpackConfig,{
   mode:'production',
   devtool:'cheap-module-source-map',
@@ -23,6 +25,10 @@ module.exports = WebpackMerge(webpackConfig,{
   
   optimization:{
     minimizer:[
+      new webpackBundleAnalyzerPlubin({
+        analyzerHost:'127.0.0.1',
+        analyzerPort:8090
+      }),
       //压缩js
      new UglifyJsPlugin({
         cache:true,
