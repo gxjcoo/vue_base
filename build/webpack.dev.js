@@ -24,6 +24,15 @@ module.exports = WebpackMerge(webpackConfig,{
     }
   }
   },
+  module: {
+    rules: [
+        {
+            test: /\.js$/,
+            use: ['babel-loader', 'eslint-loader'],
+            exclude:/node_modules/
+        }
+    ]
+},
   plugins:[
     new Webpack.HotModuleReplacementPlugin(),
     new Webpack.DefinePlugin({

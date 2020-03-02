@@ -26,6 +26,11 @@ export default {
 
   },
   methods: {
+    del(){
+      var a =  1 ;
+      var a =2;
+      a ==1
+    },
     add() {
       this.$store.commit("test/add");
     },
