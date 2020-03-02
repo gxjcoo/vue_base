@@ -1,0 +1,53 @@
+.test{
+  text-align: center;
+  color: skyblue;
+  font-size: 28px;
+}
+
+html,
+body {
+  height: 100%;
+  cursor: url(../images/pointer.cur), default;
+}
+a,
+button {
+  cursor: url(../images/cursor.cur), pointer !important;
+}
+a {
+  color: #666;
+}
+a:hover {
+  color: #eb5055 !important;
+  transition: 0.3s;
+}
+ul li {
+  list-style: none;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+img {
+  vertical-align: middle;
+}
+.clear {
+  clear: both;
+}
+.animated {
+  animation-duration: 0.5s;
+}
+
+.heart {
+  animation: 0.7s heartMove ease infinite alternate;
+}
+
+@keyframes heartMove {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}

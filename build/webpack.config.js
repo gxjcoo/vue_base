@@ -123,7 +123,7 @@ module.exports = {
         exclude:/node_modules/
       },
       {
-        test: /\.(woff2?|svg|eot|ttf|otf)\??.*$/,
+        test: /\.(woff2?|svg|eot|ttf|otf|cur)\??.*$/,
         use:{
           loader:'url-loader',
           options:{
