@@ -1,7 +1,6 @@
 <template>
   <div class="App">
     <div>
-      <el-button></el-button>
       {{this.aa}}
       <p>{{getCounter}}</p>
       <button @click="add">add</button>
