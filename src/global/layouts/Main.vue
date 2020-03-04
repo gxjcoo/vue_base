@@ -16,7 +16,6 @@ export default {
         Footer,
         Header
     }
-    
 }
 </script>
 <style lang="less" scoped>

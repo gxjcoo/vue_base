@@ -39,9 +39,12 @@ export default {
 
 <style lang='less' scoped>
 footer {
+  position:fixed;
+  bottom: 1%;
+  width:100%;
   margin-top: 16px;
   height: 30px;
-  background: rgba(255, 255, 255, 0.5);
+  // background: rgba(255, 255, 255, 0.5);
 
   .container {
     width: 1080px;

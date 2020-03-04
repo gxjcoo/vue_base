@@ -82,13 +82,13 @@ module.exports = {
             publicPath:"../dist/css/",
             hmr:devMode
           }
-        },'css-loader','less-loader',{
+        },'css-loader',{
           loader:'postcss-loader',
           options:{
             plugins:[autoprefixer]
           }
-        }],
-        exclude:/node_modules/
+        },'less-loader'],
+        
       },
       {
         test:/\.(jep?g|png|gif)$/,
