@@ -2,6 +2,8 @@
 
 # Settings Sync
 可以同步 VS Code设置同步到 GitHub 账号
+SHIFT+ALT+U 上传代码
+https://www.jianshu.com/p/4ffa3b0ad860
 
 # Bracket Pair Colorizer 2
 成对的彩色括号
@@ -26,3 +28,6 @@
 
 # CSS Peek
 快速定位css位置
+
+# Axios Snippets 
+axios只能补全

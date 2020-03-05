@@ -1,8 +1,8 @@
 <template>
   <div class="App">
     <div>
-      {{this.aa}}
-      <p>{{getCounter}}</p>
+      {{ this.aa }}
+      <p>{{ getCounter }}</p>
       <button @click="add">add</button>
     </div>
     <div></div>
@@ -10,34 +10,37 @@
 </template>
 <script>
 export default {
-  name: "App",
-  data() {
+  name: 'App',
+  data () {
     return {
-      aa: "11"
-    };
+      aa: '11'
+    }
   },
   computed: {
-    getCounter() {
-      return this.$store.getters["test/getCounter"];
+    getCounter () {
+      return this.$store.getters['test/getCounter']
     }
   },
-  mounted() {
-
+  mounted () {
+    console.log('1')
   },
   methods: {
-    del(){
-      var a =  1 ;
-      var a =2;
-      a ==1
+    del () {
+      console.log('del')
     },
-    add() {
-      this.$store.commit("test/add");
+    add () {
+      this.$store.commit('test/add')
     },
-    load() {
-      this.$axios.get("/aa").then(res => {
-        console.log(res);
-      });
+    load () {
+      this.$axiosaxios.get('url', {
+        params: {
+          key1: 'url'
+        }
+      })
+        .then(res => {
+          console.log(res)
+        })
     }
   }
-};
+}
 </script>
