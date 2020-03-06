@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <div class="bg"></div>
+  <div class="content">
+    <div class="header">
     <Header></Header>
+    </div>
     <div class="main">
       <router-view></router-view>
     </div>
@@ -22,14 +23,15 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.bg{
-  position: absolute;
-  background: #fff;
-  width:100vw;
-  height:100vh;
-  z-index: -999;
+.content{
+  width:100%;
+  height:100%;
+  background: #000;
+  .header{
+  height:18rem;
+    background: #f00;
+  height:100%;
+  }
 }
-.main {
-  height: 40rem;
-}
+
 </style>
