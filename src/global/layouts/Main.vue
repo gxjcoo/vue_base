@@ -5,6 +5,7 @@
     </div>
     <div class="main">
       <router-view></router-view>
+      <Article></Article>
     </div>
     <Footer></Footer>
   </div>
@@ -12,13 +13,15 @@
 <script>
 import Header from './Header'
 import Footer from './Footer'
+import Article from '../components/article'
 export default {
   data () {
     return {}
   },
   components: {
     Footer,
-    Header
+    Header,
+    Article
   }
 }
 </script>
@@ -26,12 +29,16 @@ export default {
 .content{
   width:100%;
   height:100%;
-  background: #000;
   .header{
-  height:18rem;
-    background: #f00;
-  height:100%;
+  height:3rem;
+  width:100%;
   }
+  .main{
+   height:80rem;
+   overflow: auto;
+  width:100%;
+  margin: 0 auto ;
+}
 }
 
 </style>
