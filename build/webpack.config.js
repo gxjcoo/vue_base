@@ -92,10 +92,11 @@ module.exports = {
       },
       {
         test:/\.(jep?g|png|gif)$/,
-        use:{
+        use:[{
           loader:'url-loader',
           options:{
-            limit:10240,
+            //只有图片小于5Kb才进行base64转换，防止css文件过大 加载慢
+            limit:5000,
             esModule: false,
             fallback:{
               loader:'file-loader',
@@ -104,7 +105,8 @@ module.exports = {
               }
             }
           }
-        },
+        }
+      ],
         exclude:/node_modules/
       },
       {

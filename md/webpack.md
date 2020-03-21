@@ -4,6 +4,8 @@ webpack : 打包生成dist/bundle[hash].js文件
 html-webpack-plugin : 将生成的js文件自动引入到index.html文件中
 clean-webpack-plugin:打包前清空dist文件夹
 style-loader css-loader less less-loader : 解析css文件
+file-loader url-loader 解析图片,视频文件，base64转换
+img-loader配合plugin 或者 image-webpack-loader:压缩图片
 postcss-loader autoprefixer :为css添加浏览器前缀,提高兼容性
 mini-css-extract-plugin : 将css文件从html中剥离出来，独立的生成文件
 

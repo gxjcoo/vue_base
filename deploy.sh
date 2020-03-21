@@ -8,7 +8,7 @@ pwd
 
 git add .
 
-git commit -m "自动化部署，本次提交无关键信息"
+git commit -m "添加webpackChunkName"
 
 git push
 
