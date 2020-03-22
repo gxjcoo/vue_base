@@ -36,5 +36,5 @@ uglifyjs-webpack-plugin 压缩js(有bug注释掉了,有替代品可用 自行百
 * happypack 启用多个子进程进行loader的文件处理
 * webpack-parallel-uglify-plugin 增强代码压缩
 
-* webpack.dll.config: 将不常更新的包 打包为静态文件。防止每次重复打包
+* webpack.dll.config: 将不会变动的第三方包，打包为静态文件。后续打包就只需要处理业务代码，防止每次重复打包
 * cache-loader :再次构建会先比较一下，如果文件较之前的没有发生变化则会直接使用缓存。

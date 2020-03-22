@@ -155,8 +155,8 @@ module.exports = {
     }),
     new vueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
+      filename: devMode ? '[name].css' : '[name].[hash:8].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash:8].css'
     }),
     new HappyPack({
       id:'happyBabel',
@@ -174,11 +174,11 @@ module.exports = {
 //将dll打包后的文件集合到dist目录下
     new Webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require('./static/vendor-manifest.json')
+      manifest: require('./dll/vendor-manifest.json')
     }),
     new CopyWebpackPlugin([ // 拷贝生成的文件到dist目录 这样每次不必手动去cv
-      {from: path.resolve(__dirname,'static/js/vendor.dll.js')  ,
-       to:path.resolve(__dirname,'../dist/js')}
+      {from: path.resolve(__dirname,'dll/js/vendor.dll.js')  ,
+        to:path.resolve(__dirname,'../dist/js')}
     ]),
   ],
   // new webpackBundleAnalyzerPlubin({

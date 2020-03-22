@@ -25,11 +25,11 @@ module.exports = WebpackMerge(webpackConfig,{
   optimization:{
     minimizer:[
       //压缩js
-     new UglifyJsPlugin({
+      new UglifyJsPlugin({
         cache:true,
         parallel:true,
         sourceMap:true
-   }),
+     }),
     //压缩css
     new OptimizeCssAssetsPlugin({}),
     new Webpack.DefinePlugin({

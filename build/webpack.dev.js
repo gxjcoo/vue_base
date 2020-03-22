@@ -27,9 +27,14 @@ module.exports = WebpackMerge(webpackConfig,{
   module: {
     rules: [
         {
-            test: /\.js$/,
-            use: ['babel-loader', 'eslint-loader'],
-            exclude:/node_modules/
+            test: /\.(js|vue)$/,
+            loader:'eslint-loader',
+            enforce:'pre',
+            exclude:/node_modules/,
+            options:{
+              formatter:require('eslint-friendly-formatter'),
+              emitWarning:! webpackConfig.dev.showEslintErrorsInOverlay
+            }
         }
     ]
 },

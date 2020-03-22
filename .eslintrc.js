@@ -24,6 +24,7 @@ module.exports = {
   plugins: ['vue'],
   //启用的规则及其各自的错误级别e
   rules: {
+    //1-警告 2-报错 0-off-关闭
     //定义，未使用
     'no-unused-vars': 2,
     //备份this只能用self和that
